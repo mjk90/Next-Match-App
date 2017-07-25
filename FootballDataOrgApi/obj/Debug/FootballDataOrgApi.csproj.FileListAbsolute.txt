@@ -1,0 +1,20 @@
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\bin\Debug\FootballDataOrgApi.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\bin\Debug\FootballDataOrgApi.pdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.csprojResolveAssemblyReference.cache
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.pdb
+C:\SourceCode\Apps\Match\FootballDataOrgApi\bin\Debug\FootballDataOrgApi.dll
+C:\SourceCode\Apps\Match\FootballDataOrgApi\bin\Debug\FootballDataOrgApi.pdb
+C:\SourceCode\Apps\Match\FootballDataOrgApi\bin\Debug\Newtonsoft.Json.dll
+C:\SourceCode\Apps\Match\FootballDataOrgApi\bin\Debug\Newtonsoft.Json.xml
+C:\SourceCode\Apps\Match\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.dll
+C:\SourceCode\Apps\Match\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.pdb
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\bin\Debug\FootballDataOrgApi.dll
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\bin\Debug\FootballDataOrgApi.pdb
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\bin\Debug\Newtonsoft.Json.dll
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\bin\Debug\Newtonsoft.Json.xml
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.csprojResolveAssemblyReference.cache
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.dll
+C:\GitRepos\Next-Match-App\FootballDataOrgApi\obj\Debug\FootballDataOrgApi.pdb

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars></Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Forms.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Svg.Forms\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Svg.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Plugin.Settings\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\SkiaSharp\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\SkiaSharp.Views.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\SkiaSharp.Views.Forms\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\FFImageLoading.Forms.Droid\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\FFImageLoading.Svg.Forms\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\FFImageLoading.Svg.Platform\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Plugin.Settings\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\SkiaSharp\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\SkiaSharp.Views.Android\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\SkiaSharp.Views.Forms\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Svg.Forms.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\FFImageLoading.Svg.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Plugin.Settings.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\SkiaSharp.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\SkiaSharp.Views.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\SkiaSharp.Views.Forms.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\GitRepos\Next-Match-App\TestApp2\TestApp2.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>

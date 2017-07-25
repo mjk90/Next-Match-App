@@ -1,0 +1,23 @@
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\MatchApp.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\MatchApp.pdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\MatchApp.MatchApp.apk
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\MatchApp.MatchApp-Signed.apk
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\FootballDataOrgApi.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\FootballDataOrgApi.pdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\MatchApp.csprojResolveAssemblyReference.cache
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\MatchApp.dll
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\MatchApp.pdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\android\bin\MatchApp.MatchApp.apk
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\res\layout\main.xml
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\res\values\strings.xml
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\res\drawable\icon.png
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\R.cs.flag
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\uploadflags.txt
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\FootballDataOrgApi.dll.mdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\bin\Debug\MatchApp.dll.mdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\android\assets\FootballDataOrgApi.dll.mdb
+C:\Users\Matt\documents\visual studio 2017\Projects\Match\MatchApp\obj\Debug\android\assets\MatchApp.dll.mdb
+C:\SourceCode\Apps\Match\MatchApp\obj\Debug\MatchApp.csprojResolveAssemblyReference.cache
+C:\SourceCode\Apps\Match\MatchApp\obj\Debug\MatchApp.CarauselPage.xaml.g.cs

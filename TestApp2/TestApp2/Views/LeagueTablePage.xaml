@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp2.Views.LeagueTablePage"
+             BindingContext="ViewModel"
+             Title="League Table">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" Text="Select Team" Clicked="SelectLeagueClicked" />
+        <ToolbarItem Order="Secondary" Text="Select League" Clicked="SelectLeagueClicked" />
+        <ToolbarItem Order="Secondary" Text="Settings" Clicked="SelectLeagueClicked" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="NoLeagueSelected" VerticalOptions="CenterAndExpand">
+                <Label Text="Please Select a league..." FontSize="Large" HorizontalTextAlignment="Center" TextColor="Gray" />
+                <Button Text="Select League" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="SelectLeagueClicked" />
+            </StackLayout>
+
+            <StackLayout x:Name="LeagueTable" VerticalOptions="CenterAndExpand">
+                <StackLayout Padding="5,10,5,10">
+                    <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="Team" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.1}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                        <Label Text="P" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.7}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                        <Label Text="GD" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.8}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                        <Label Text="Pts" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.9}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                    </RelativeLayout>
+                </StackLayout>
+            
+                <ListView x:Name="LeagueTableList"
+				    ItemsSource="{Binding Standing}"
+                    VerticalOptions="FillAndExpand"
+                    HasUnevenRows="true"
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="{Binding Position}" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                                        <Label Text="{Binding TeamName}" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.1}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                                        <Label Text="{Binding PlayedGames}" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.7}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                                        <Label Text="{Binding GoalDifference}" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.8}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                                        <Label Text="{Binding Points}" FontSize="Small" HeightRequest="20"
+                                               RelativeLayout.XConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.9}" 
+                                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0}" />
+                                    </RelativeLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

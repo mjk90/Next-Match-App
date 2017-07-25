@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="TestApp2.Views.SelectLeaguePage"
+             Title="Select Your League"
+             BindingContext="ViewModel">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Padding="0,50,0,30">
+                <Label Text="Select your league" FontSize="28" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding CurrentLeagueName, StringFormat='Current league is {0}' }" IsVisible="{Binding ViewModel.HasCurrentLeague}" FontSize="Small" HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout Padding="150,0,150,0">
+                <Picker Title="Year" x:Name="YearPicker" SelectedIndexChanged="YearPickerChanged">
+                    <Picker.Items>
+                        <x:String>2017</x:String>
+                        <x:String>2016</x:String>
+                        <x:String>2015</x:String>
+                        <x:String>2014</x:String>
+                        <x:String>2013</x:String>
+                        <x:String>2012</x:String>
+                        <x:String>2011</x:String>
+                        <x:String>2010</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>
+                        0
+                    </Picker.SelectedIndex>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Padding="50,0,50,0">
+                <ListView x:Name="TeamsListView"
+				    ItemsSource="{Binding SearchResults.Leagues}"
+                    VerticalOptions="FillAndExpand"
+                    HasUnevenRows="true"
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    IsPullToRefreshEnabled="true"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    CachingStrategy="RecycleElement"
+				    ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Caption}"
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemTextStyle}"
+                                           FontSize="16"/>
+                                    <Label Text="{Binding League}"
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

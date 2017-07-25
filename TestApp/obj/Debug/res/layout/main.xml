@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CarouselPage xmlns:xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TestApp.MainPage">
+    <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform
+                x:TypeArguments="Thickness"
+                iOS="0,40,0,0"
+                Android="0,40,0,0" />
+        </ContentPage.Padding>
+        <StackLayout>
+            <Label
+                Text="Red"
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+            <BoxView
+                Color="Red"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform
+                x:TypeArguments="Thickness"
+                iOS="0,40,0,0"
+                Android="0,40,0,0" />
+        </ContentPage.Padding>
+        <StackLayout>
+            <Label
+                Text="Red"
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+            <BoxView
+                Color="Red"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <ContentPage.Padding>
+            <OnPlatform
+                x:TypeArguments="Thickness"
+                iOS="0,40,0,0"
+                Android="0,40,0,0" />
+        </ContentPage.Padding>
+        <StackLayout>
+            <Label
+                Text="Red"
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+            <BoxView
+                Color="Red"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>

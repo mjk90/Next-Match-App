@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="TestApp2.Views.TeamFixturesPageNew"
+             Title="Team Fixtures"
+             BindingContext="SearchResults">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" Text="Select Team" Clicked="SelectTeamClicked" />
+        <ToolbarItem Order="Secondary" Text="Select League" Clicked="SelectLeagueClicked" />
+        <ToolbarItem Order="Secondary" Text="Settings" Clicked="SettingsClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            
+            <StackLayout x:Name="FixturesPageDetails" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" >
+                <control:CarouselView ItemsSource="{Binding Fixtures}" x:Name="FixturesCarousel" PositionSelected="PageChanged">
+                    <control:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="20" BackgroundColor="{Binding BackgroundColour}">
+                                <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="50">
+
+                                    <Label Text="{Binding MatchDayString}" FontSize="Small" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.1}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+
+                                    <Label Text="{Binding HomeTeamName }" FontSize="Medium" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.2}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.45}"
+                                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}" />
+                                    <Label Text="vs" FontSize="Medium" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.45}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.2}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}" />
+                                    <Label Text="{Binding AwayTeamName }" FontSize="Medium" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.55}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.2}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.45}"
+                                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}" />
+
+                                    <Label Text="{Binding Result.GoalsHomeTeam }" FontSize="Large" Scale="2" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.4}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.45}" />
+                                    <Label Text="-" FontSize="Large" Scale="2" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.45}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.4}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}" />
+                                    <Label Text="{Binding Result.GoalsAwayTeam }" FontSize="Large" Scale="2" HorizontalTextAlignment="Center"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.55}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.4}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.45}" />
+
+                                    <Label Text="{Binding MatchResult}" FontSize="Large" HorizontalTextAlignment="Center" Scale="2"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
+                                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.6}"
+                                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                                    
+                                </RelativeLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </control:CarouselView.ItemTemplate>
+                </control:CarouselView>
+            </StackLayout>
+
+            <StackLayout x:Name="DotsContainer" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.25" AbsoluteLayout.LayoutFlags="All"></StackLayout>
+            
+            <StackLayout x:Name="NoTeamSelected" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="1, 0.5, 1, 0.5" AbsoluteLayout.LayoutFlags="All">
+                <Label Text="Please Select a team..." FontSize="Large" HorizontalTextAlignment="Center" TextColor="Gray" />
+                <Button Text="Select Team" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="SelectTeamClicked" />
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
