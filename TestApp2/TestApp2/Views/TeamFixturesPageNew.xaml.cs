@@ -17,9 +17,12 @@ namespace TestApp2.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TeamFixturesPageNew : ContentPage
     {
+        // http://hot-totem.com/blog/post/carouselview-pageindicators-xamarinforms
+
         public FootballApi Api { get; set; }
         public FixtureSearchResults SearchResults { get; set; }
-        private DotButtonsLayout dotLayout;
+        private DotButtonsLayout DotLayout;
+        private ScrollView DotScrollView;
 
         public TeamFixturesPageNew()
         {
@@ -43,13 +46,6 @@ namespace TestApp2.Views
             else
             {
                 FixtureSearchResults fixtureSearchResults = Api.GetFixturesForTeam(SelectTeamDetails.CurrentTeamId);
-
-                var total = fixtureSearchResults.Fixtures.Count;
-                var pageSize = 25; // set your page size, which is number of records per page
-                var page = this.FindByName<CarouselView>("FixturesCarousel").Position < 1 ? 1 : this.FindByName<CarouselView>("FixturesCarousel").Position; // set current page number, must be >= 1
-                var skip = page - (pageSize / 2) > 0 ? page - (pageSize / 2) : 0;
-
-                fixtureSearchResults.Fixtures = fixtureSearchResults.Fixtures.Skip(skip).Take(pageSize).ToList();
                 fixtureSearchResults.SearchQuery = SelectTeamDetails.CurrentTeamName;
 
                 Title = "Fixtures for " + SelectTeamDetails.CurrentTeamName;
@@ -70,14 +66,19 @@ namespace TestApp2.Views
                     SearchResults.Fixtures.Add(fixture);
                 }
 
-                dotLayout = new DotButtonsLayout(fixtureSearchResults.Fixtures.Count, Color.Black, 7);
-                foreach (DotButton dot in dotLayout.dots)
-                    dot.Clicked += DotClicked;
-                this.FindByName<StackLayout>("DotsContainer").Children.Clear();
-                this.FindByName<StackLayout>("DotsContainer").Children.Add(dotLayout);
 
-                // todo: don't trust this vv. It's not working properly
-                this.FindByName<CarouselView>("FixturesCarousel").Position = this.FindByName<CarouselView>("FixturesCarousel").Position - skip;
+                DotLayout = new DotButtonsLayout(fixtureSearchResults.Fixtures.Count, Color.Black, 12);
+                foreach (DotButton dot in DotLayout.dots)
+                    dot.Clicked += async (sender) => await DotClicked(sender);
+
+                this.FindByName<StackLayout>("DotsContainer").Children.Clear();
+                DotScrollView = new ScrollView();
+                DotScrollView.Orientation = ScrollOrientation.Horizontal;
+                DotScrollView.HeightRequest = 50;
+                DotScrollView.Content = DotLayout;
+                this.FindByName<StackLayout>("DotsContainer").Children.Add(DotScrollView);
+                
+
                 SetDotPosition(this.FindByName<CarouselView>("FixturesCarousel").Position);
 
                 BindingContext = fixtureSearchResults;
@@ -86,29 +87,39 @@ namespace TestApp2.Views
         }
 
         //The function called by the buttons clicked event
-        private void DotClicked(object sender)
+        private async Task DotClicked(object sender)
         {
             var button = (DotButton)sender;
             //Get the selected buttons index
             int index = button.index;
             //Set the corresponding page as position of the carousel view
             this.FindByName<CarouselView>("FixturesCarousel").Position = index;
+            await ScrollDots(button);
+        }
+
+        private async Task ScrollDots(Element button)
+        {
+            await Task.Delay(1);
+            await DotScrollView.ScrollToAsync(button, ScrollToPosition.Center, true);
         }
 
         //The function that is called when the user swipes trough pages
-        private void PageChanged(object sender, SelectedPositionChangedEventArgs e)
+        private async void PageChanged(object sender, SelectedPositionChangedEventArgs e)
         {
             //Get the selected page
             SetDotPosition((int)(e.SelectedPosition));
         }
 
-        private void SetDotPosition(int position)
+        private async void SetDotPosition(int position)
         {
-            for (int i = 0; i < dotLayout.dots.Length; i++)
+            for (int i = 0; i < DotLayout.dots.Length; i++)
                 if (position == i)
-                    dotLayout.dots[i].Opacity = 1;
+                {
+                    DotLayout.dots[i].Opacity = 1;
+                    await ScrollDots(DotLayout.dots[i]);
+                }
                 else
-                    dotLayout.dots[i].Opacity = 0.5;
+                    DotLayout.dots[i].Opacity = 0.5;
         }
 
         private void SelectLeagueClicked(object sender, EventArgs e)

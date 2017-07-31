@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace TestApp2.Views
 {
-    public class DotButton : BoxView
+    public class DotButton : BoxView 
     {
         public int index;
         public DotButtonsLayout layout;

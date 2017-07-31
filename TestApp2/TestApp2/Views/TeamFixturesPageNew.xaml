@@ -69,7 +69,7 @@
                 </control:CarouselView>
             </StackLayout>
 
-            <StackLayout x:Name="DotsContainer" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.25" AbsoluteLayout.LayoutFlags="All"></StackLayout>
+            <StackLayout x:Name="DotsContainer" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.25" AbsoluteLayout.LayoutFlags="All" Padding="10, 0, 10, 0"></StackLayout>
             
             <StackLayout x:Name="NoTeamSelected" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="1, 0.5, 1, 0.5" AbsoluteLayout.LayoutFlags="All">
                 <Label Text="Please Select a team..." FontSize="Large" HorizontalTextAlignment="Center" TextColor="Gray" />

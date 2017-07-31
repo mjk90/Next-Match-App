@@ -18,13 +18,3 @@ C:\SourceCode\Apps\Match\Match\bin\Debug\Newtonsoft.Json.xml
 C:\SourceCode\Apps\Match\Match\obj\Debug\Match.csprojResolveAssemblyReference.cache
 C:\SourceCode\Apps\Match\Match\obj\Debug\Match.exe
 C:\SourceCode\Apps\Match\Match\obj\Debug\Match.pdb
-C:\GitRepos\Next-Match-App\Match\bin\Debug\Match.exe.config
-C:\GitRepos\Next-Match-App\Match\bin\Debug\Match.exe
-C:\GitRepos\Next-Match-App\Match\bin\Debug\Match.pdb
-C:\GitRepos\Next-Match-App\Match\bin\Debug\FootballDataOrgApi.dll
-C:\GitRepos\Next-Match-App\Match\bin\Debug\Newtonsoft.Json.dll
-C:\GitRepos\Next-Match-App\Match\bin\Debug\FootballDataOrgApi.pdb
-C:\GitRepos\Next-Match-App\Match\bin\Debug\Newtonsoft.Json.xml
-C:\GitRepos\Next-Match-App\Match\obj\Debug\Match.csprojResolveAssemblyReference.cache
-C:\GitRepos\Next-Match-App\Match\obj\Debug\Match.exe
-C:\GitRepos\Next-Match-App\Match\obj\Debug\Match.pdb
