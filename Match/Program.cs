@@ -36,7 +36,7 @@ namespace Match
                 if(teamChoice < teamCount - 1)
                 {
                     Team chosenTeam = teamSearchSesults.Teams[teamChoice];
-                    FixtureSearchResults fixtureSearchResults = api.GetFixturesForTeam(chosenTeam.Id);
+                    FixtureSearchResults fixtureSearchResults = api.GetFixturesForTeam(chosenTeam.Id, DateTime.UtcNow.Year);
 
                     if (fixtureSearchResults != default(FixtureSearchResults))
                     {

@@ -23,8 +23,6 @@
                         <x:String>2014</x:String>
                         <x:String>2013</x:String>
                         <x:String>2012</x:String>
-                        <x:String>2011</x:String>
-                        <x:String>2010</x:String>
                     </Picker.Items>
                     <Picker.SelectedIndex>
                         0

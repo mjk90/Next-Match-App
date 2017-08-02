@@ -45,44 +45,77 @@ namespace TestApp2.Views
             }
             else
             {
-                FixtureSearchResults fixtureSearchResults = Api.GetFixturesForTeam(SelectTeamDetails.CurrentTeamId);
-                fixtureSearchResults.SearchQuery = SelectTeamDetails.CurrentTeamName;
-
-                Title = "Fixtures for " + SelectTeamDetails.CurrentTeamName;
-
-                foreach (Fixture fixture in fixtureSearchResults.Fixtures)
+                try
                 {
-                    bool isHomeTeam = fixture.HomeTeamName.ToLower() == fixtureSearchResults.SearchQuery.ToLower();
-                    int result = isHomeTeam ? (fixture.Result.GoalsHomeTeam > fixture.Result.GoalsAwayTeam ? 1 :
-                                                fixture.Result.GoalsHomeTeam < fixture.Result.GoalsAwayTeam ? -1 :
-                                                0) :
-                                                (fixture.Result.GoalsHomeTeam < fixture.Result.GoalsAwayTeam ? 1 :
-                                                fixture.Result.GoalsHomeTeam > fixture.Result.GoalsAwayTeam ? -1 :
-                                                0);
-                    fixture.BackgroundColour = result == 1 ? "#9ccc64" :
-                                                result == -1 ? "#f44335" :
-                                                "#f9bf2d";
-                    fixture.MatchResult = result == 1 ? "Win" : result == -1 ? "Loss" : "Draw";
-                    SearchResults.Fixtures.Add(fixture);
-                }
+                    FixtureSearchResults fixtureSearchResults = Api.GetFixturesForTeam(SelectTeamDetails.CurrentTeamId, DateTime.UtcNow.Year);
+                    fixtureSearchResults.League = Api.GetLeagueDetails(fixtureSearchResults.Fixtures.FirstOrDefault()._Links.Competition.Href);
+                    fixtureSearchResults.SearchQuery = SelectTeamDetails.CurrentTeamName;
+                    Title = "Fixtures for " + SelectTeamDetails.CurrentTeamName;
 
-
-                DotLayout = new DotButtonsLayout(fixtureSearchResults.Fixtures.Count, Color.Black, 12);
-                foreach (DotButton dot in DotLayout.dots)
-                    dot.Clicked += async (sender) => await DotClicked(sender);
-
-                this.FindByName<StackLayout>("DotsContainer").Children.Clear();
-                DotScrollView = new ScrollView();
-                DotScrollView.Orientation = ScrollOrientation.Horizontal;
-                DotScrollView.HeightRequest = 50;
-                DotScrollView.Content = DotLayout;
-                this.FindByName<StackLayout>("DotsContainer").Children.Add(DotScrollView);
+                    DateTime tempDate = new DateTime(2017, 8, 26);
+                    DateTime closestDate = DateTime.MaxValue;
+                    int closestDateIndex = 0;
+                    int fixturesCount = 0;
                 
+                    foreach (Fixture fixture in fixtureSearchResults.Fixtures)
+                    {
+                        if (fixture.AlreadyPlayed)
+                        {
+                            bool isHomeTeam = fixture.HomeTeamName.ToLower() ==
+                                                fixtureSearchResults.SearchQuery.ToLower();
+                            int result = isHomeTeam
+                                ? (fixture.Result.GoalsHomeTeam > fixture.Result.GoalsAwayTeam
+                                    ? 1
+                                    : fixture.Result.GoalsHomeTeam < fixture.Result.GoalsAwayTeam
+                                        ? -1
+                                        : 0)
+                                : (fixture.Result.GoalsHomeTeam < fixture.Result.GoalsAwayTeam
+                                    ? 1
+                                    : fixture.Result.GoalsHomeTeam > fixture.Result.GoalsAwayTeam
+                                        ? -1
+                                        : 0);
+                            fixture.BackgroundColour = result == 1 ? "#9ccc64" : result == -1 ? "#f44335" : "#f9bf2d";
+                            fixture.MatchResult = result == 1 ? "Win" : result == -1 ? "Loss" : "Draw";
+                        }
+                        else
+                        {
+                            fixture.BackgroundColour = "#DCDCDC";
+                            fixture.MatchResult = fixture.Date.ToShortDateString();
+                        }
 
-                SetDotPosition(this.FindByName<CarouselView>("FixturesCarousel").Position);
+                        if ((closestDate - tempDate).Days > (fixture.Date - tempDate).Days)
+                        {
+                            closestDate = fixture.Date;
+                            closestDateIndex = fixturesCount;
+                        }
+                        fixturesCount++;
+                        SearchResults.Fixtures.Add(fixture);
+                    }
 
-                BindingContext = fixtureSearchResults;
-                selectTeamMessage.IsVisible = false;
+
+                    DotLayout = new DotButtonsLayout(fixtureSearchResults.Fixtures.Count, Color.Black, 12);
+                    foreach (DotButton dot in DotLayout.dots)
+                        dot.Clicked += async (sender) => await DotClicked(sender);
+
+                    this.FindByName<StackLayout>("DotsContainer").Children.Clear();
+                    DotScrollView = new ScrollView();
+                    DotScrollView.Orientation = ScrollOrientation.Horizontal;
+                    DotScrollView.HeightRequest = 50;
+                    DotScrollView.Content = DotLayout;
+                    this.FindByName<StackLayout>("DotsContainer").Children.Add(DotScrollView);
+
+                    this.FindByName<CarouselView>("FixturesCarousel").Position = closestDateIndex;
+
+                    SetDotPosition(this.FindByName<CarouselView>("FixturesCarousel").Position);
+                    selectTeamMessage.IsVisible = false;
+
+                    BindingContext = fixtureSearchResults;
+
+                }
+                catch (Exception e)
+                {
+                    selectTeamMessage.IsVisible = true;
+                }
             }
         }
 

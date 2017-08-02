@@ -15,7 +15,7 @@
 
     <ContentPage.Content>
         <AbsoluteLayout>
-            
+
             <StackLayout x:Name="FixturesPageDetails" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" >
                 <control:CarouselView ItemsSource="{Binding Fixtures}" x:Name="FixturesCarousel" PositionSelected="PageChanged">
                     <control:CarouselView.ItemTemplate>
@@ -48,7 +48,7 @@
                                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0}" 
                                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.4}"
                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.45}" />
-                                    <Label Text="-" FontSize="Large" Scale="2" HorizontalTextAlignment="Center"
+                                    <Label Text="-" IsVisible="{Binding AlreadyPlayed}" FontSize="Large" Scale="2" HorizontalTextAlignment="Center"
                                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor = 0.45}" 
                                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor = 0.4}"
                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}" />
@@ -67,6 +67,7 @@
                         </DataTemplate>
                     </control:CarouselView.ItemTemplate>
                 </control:CarouselView>
+                <Label Text="{Binding League.Caption}" Margin="5" FontSize="Medium" HorizontalTextAlignment="Center" TextColor="Gray" />
             </StackLayout>
 
             <StackLayout x:Name="DotsContainer" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0, 1, 1, 0.25" AbsoluteLayout.LayoutFlags="All" Padding="10, 0, 10, 0"></StackLayout>

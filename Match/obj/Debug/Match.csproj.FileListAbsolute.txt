@@ -8,6 +8,7 @@ C:\Users\Matt\documents\visual studio 2017\Projects\Match\Match\bin\Debug\Newton
 C:\Users\Matt\documents\visual studio 2017\Projects\Match\Match\obj\Debug\Match.csprojResolveAssemblyReference.cache
 C:\Users\Matt\documents\visual studio 2017\Projects\Match\Match\obj\Debug\Match.exe
 C:\Users\Matt\documents\visual studio 2017\Projects\Match\Match\obj\Debug\Match.pdb
+C:\SourceCode\Apps\Match\Match\obj\Debug\Match.csprojResolveAssemblyReference.cache
 C:\SourceCode\Apps\Match\Match\bin\Debug\Match.exe.config
 C:\SourceCode\Apps\Match\Match\bin\Debug\Match.exe
 C:\SourceCode\Apps\Match\Match\bin\Debug\Match.pdb
@@ -15,6 +16,5 @@ C:\SourceCode\Apps\Match\Match\bin\Debug\FootballDataOrgApi.dll
 C:\SourceCode\Apps\Match\Match\bin\Debug\Newtonsoft.Json.dll
 C:\SourceCode\Apps\Match\Match\bin\Debug\FootballDataOrgApi.pdb
 C:\SourceCode\Apps\Match\Match\bin\Debug\Newtonsoft.Json.xml
-C:\SourceCode\Apps\Match\Match\obj\Debug\Match.csprojResolveAssemblyReference.cache
 C:\SourceCode\Apps\Match\Match\obj\Debug\Match.exe
 C:\SourceCode\Apps\Match\Match\obj\Debug\Match.pdb
